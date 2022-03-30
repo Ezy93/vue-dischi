@@ -31,7 +31,7 @@ export default {
                 background-color: #2e3a46;
                 div.px-4{
                     div.my-album-description{
-                        color: #737b7e;
+                        color: #737b7e; /* e lo stesso colore dell'header creare una variabile */
                     }
                 }
             }
