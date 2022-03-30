@@ -1,8 +1,10 @@
 <template>
-    <main>
+    <main class="container-fluid">
         <div class="row">
             <div class="col-8 offset-2">
-                <AlbumCard/>
+                
+                    <AlbumCard/>
+                
             </div>
         </div>
     </main>
@@ -20,5 +22,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+    main{
+        height: calc(100vh - 65px);
+        background-color: #1e2d3b;
+    }
 </style>
