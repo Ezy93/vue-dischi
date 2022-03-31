@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <IndexHeader
-    :albumArray = albumList
+    :genreArray = genreNoDuplicate
     />
     <IndexMain @getAlbum="updateAlbum"/>
   </div>
@@ -20,16 +20,29 @@ export default {
   data: function(){
     return{
       albumList: null,
+      genreList:[],
+      genreNoDuplicate:[],
+      /* provare a creare qui l'array di genre non duplicati e poi passarlo come props a header */
     }
   },
   created: function(){
     
   },
+  
   methods:{
     updateAlbum(albums){
       this.albumList = albums;
-      console.warn(albums)
-    }
+
+      this.albumList.forEach(element => {
+        this.genreList.push(element.genre)
+      });
+      this.genreNoDuplicate=[...new Set(this.genreList)]
+      console.log(this.genreList);
+      console.warn(this.genreNoDuplicate)
+
+    },
+    
+    
   },
 }
 </script>

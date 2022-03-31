@@ -39,10 +39,10 @@ export default {
             axios
             .get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result)=>{
-                console.log(result.data.response);
+                
                 this.albumInfo = result.data.response
                 this.$emit('getAlbum', this.albumInfo)
-                console.log(this.albumInfo) 
+                
             })
             .catch((error) =>{
                 console.log(error)
