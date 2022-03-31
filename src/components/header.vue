@@ -8,7 +8,7 @@
         <div class="my-select-container d-flex">
             <h3 class="text-white me-4">Seleziona un genere musicale:</h3>
             <select class="my-2 me-3" name="musicgenre" id="">
-                    <option v-for="(element,index) in uniqueGenreArray" :key="index" :value="element.genre">{{element.genre}}</option>
+                    <option v-for="(element,index) in albumArray" :key="index" :value="element.genre">{{element.genre}}</option>
             </select>
 
         </div>
@@ -16,23 +16,18 @@
 </template>
 
 <script>
+
 export default {
     name: "IndexHeader",
     props:{'albumArray': Array},
     data: function(){
         return{
-            albumTemporary : this.albumArray,
-            uniqueGenreArray :[]
+            newArray: [],
         }
     },
-    methods:{
-        getSinlgeGenre(){
-            this.albumTemporary.forEach(element => {
-                if(this.uniqueGenreArray.include(element.genre)){
 
-                }
-            });
-        }
+    computed:{
+        
         
     },
 }
