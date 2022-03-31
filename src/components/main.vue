@@ -41,6 +41,7 @@ export default {
             .then((result)=>{
                 console.log(result.data.response);
                 this.albumInfo = result.data.response
+                this.$emit('getAlbum', this.albumInfo)
                 console.log(this.albumInfo) 
             })
             .catch((error) =>{

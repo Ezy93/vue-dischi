@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <IndexHeader/>
-    <IndexMain/>
+    <IndexHeader
+    :albumArray = albumList
+    />
+    <IndexMain @getAlbum="updateAlbum"/>
   </div>
 </template>
 
@@ -17,14 +19,17 @@ export default {
   },
   data: function(){
     return{
-      
+      albumList: null,
     }
   },
   created: function(){
     
   },
   methods:{
-    
+    updateAlbum(albums){
+      this.albumList = albums;
+      console.warn(albums)
+    }
   },
 }
 </script>
