@@ -22,7 +22,7 @@ export default {
       albumList: null,
       genreList:[],
       genreNoDuplicate:[],
-      /* provare a creare qui l'array di genre non duplicati e poi passarlo come props a header */
+      
     }
   },
   created: function(){
@@ -35,7 +35,7 @@ export default {
   methods:{
     updateAlbum(albums){
       this.albumList = albums;
-      /* foreach che crea un array con i generi musicali senza duplicati */
+      /* il codice sottostante crea un array con i generi musicali senza duplicati */
       this.albumList.forEach(element => {
         this.genreList.push(element.genre)
       });

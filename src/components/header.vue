@@ -22,7 +22,7 @@ export default {
     props:{'genreArray': Array},
     data: function(){
         return{
-            
+            selectedValue: null,
         }
     },
 
@@ -30,6 +30,9 @@ export default {
         
         
     },
+    methods:{
+        
+    }
 }
 </script>
 
