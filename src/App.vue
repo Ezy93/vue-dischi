@@ -14,11 +14,22 @@ export default {
   components: {
     IndexHeader,
     IndexMain,
-  }
+  },
+  data: function(){
+    return{
+      
+    }
+  },
+  created: function(){
+    
+  },
+  methods:{
+    
+  },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
