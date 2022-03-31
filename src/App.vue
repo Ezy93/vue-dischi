@@ -28,21 +28,22 @@ export default {
   created: function(){
     
   },
+  computed:{
+    
+  },
   
   methods:{
     updateAlbum(albums){
       this.albumList = albums;
-
+      /* foreach che crea un array con i generi musicali senza duplicati */
       this.albumList.forEach(element => {
         this.genreList.push(element.genre)
       });
       this.genreNoDuplicate=[...new Set(this.genreList)]
-      console.log(this.genreList);
-      console.warn(this.genreNoDuplicate)
+      /* console.log(this.genreList);
+      console.warn(this.genreNoDuplicate) */
 
     },
-    
-    
   },
 }
 </script>
