@@ -1,5 +1,5 @@
 <template>
-    <div class="my-container-card">
+    <div class="my-container-card mt-1"  v-if="(album.genre == selValue)||(selValue == 'All')">
         <div class="my-card p-4 mx-3">
             <div class="my-album-image">
                 <img :src="album.poster" alt="asdasdas" class="img-fluid">
@@ -20,7 +20,10 @@
 <script>
 export default {
     name: "AlbumCard",
-    props:{'album': Object},
+    props:{
+        'album': Object,
+        'selValue': String
+        },
 }
 </script>
 
@@ -28,7 +31,7 @@ export default {
     
     div.my-container-card{
         width: calc(100% / 5);
-        height: 43%;
+        
         div.my-card{
             background-color: #2e3a46;
             height: 100%;

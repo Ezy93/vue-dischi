@@ -6,6 +6,7 @@
     />
     <IndexMain 
     @getAlbum="updateAlbum"
+    :value = selectValue
     
     />
   </div>
@@ -26,7 +27,7 @@ export default {
       albumList: null,
       genreList:[],
       genreNoDuplicate:[],
-      selectValue: "",
+      selectValue: "All",
       
     }
   },
@@ -51,6 +52,7 @@ export default {
     },
     SaveValue(e){
       this.selectValue=e;
+      
     },
     
 

@@ -1,12 +1,14 @@
 <template>
     <main class="container-fluid">
-        <div class="row pt-5">
+        <div class="row pt-3">
             <div class="col-8 offset-2 d-flex flex-wrap">
                 
-                    <AlbumCard 
+                    <AlbumCard
+                    
                     v-for="(element,index) in albumInfo" 
                     :key="index"
                     :album="element"
+                    :selValue="value"
                     />
                 
                 
@@ -24,6 +26,7 @@ export default {
     components: {
         AlbumCard,
     },
+    props:{'value': String},
     
     data: function(){
         return{
