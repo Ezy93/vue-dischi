@@ -7,8 +7,9 @@
         </div>
         <div class="my-select-container d-flex">
             <h3 class="text-white me-4">Seleziona un genere musicale:</h3>
-            <select class="my-2 me-3" name="musicgenre" id="">
-                    <option v-for="(element,index) in genreArray" :key="index" :value="element">{{element}}</option>
+            <select class="my-2 me-3" name="musicgenre" id="" @change="onChange($event)" >
+                <option value=""> </option>
+                <option v-for="(element,index) in genreArray" :key="index" :value="element">{{element}}</option>
             </select>
 
         </div>
@@ -22,16 +23,19 @@ export default {
     props:{'genreArray': Array},
     data: function(){
         return{
-            selectedValue: null,
+            selectedValue: "",
         }
     },
 
     computed:{
         
         
-    },
+        },
     methods:{
-        
+        onChange(e){
+            this.selectedValue = e.target.value;
+            this.$emit("updateDiscShow",this.selectedValue)
+        }
     }
 }
 </script>

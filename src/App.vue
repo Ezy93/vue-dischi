@@ -2,8 +2,12 @@
   <div id="app">
     <IndexHeader
     :genreArray = genreNoDuplicate
+    @updateDiscShow="SaveValue"
     />
-    <IndexMain @getAlbum="updateAlbum"/>
+    <IndexMain 
+    @getAlbum="updateAlbum"
+    
+    />
   </div>
 </template>
 
@@ -22,6 +26,7 @@ export default {
       albumList: null,
       genreList:[],
       genreNoDuplicate:[],
+      selectValue: "",
       
     }
   },
@@ -44,6 +49,11 @@ export default {
       console.warn(this.genreNoDuplicate) */
 
     },
+    SaveValue(e){
+      this.selectValue=e;
+    },
+    
+
   },
 }
 </script>
